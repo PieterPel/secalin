@@ -1,10 +1,10 @@
-import gleam_uuid
+import gluid
 
-pub type TaskId {
+pub opaque type TaskId {
   TaskId(id: String)
 }
 
 pub fn new() -> TaskId {
-  let id = gleam_uuid.v4()
+  let id = gluid.guidv4()
   TaskId(id)
 }

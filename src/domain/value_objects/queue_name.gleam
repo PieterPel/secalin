@@ -1,4 +1,4 @@
-pub type QueueName {
+pub opaque type QueueName {
   QueueName(name: String)
 }
 

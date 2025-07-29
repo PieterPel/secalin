@@ -1,4 +1,4 @@
-pub type RetryPolicy {
+pub opaque type RetryPolicy {
     RetryPolicty(max_retries: Int, delay_seconds: Int)
 }
 
