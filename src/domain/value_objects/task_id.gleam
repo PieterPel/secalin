@@ -1,5 +1,9 @@
+//// Module that defines a task id
+
 import gluid
 
+/// TaskId
+///
 pub opaque type TaskId {
   TaskId(id: String)
 }

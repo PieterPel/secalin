@@ -1,5 +1,9 @@
+//// Module that defines the worker pool port
+
 import domain/entities/worker
 
+/// WorkerPool
+///
 pub type WorkerPool(error) {
     WorkerPool(
         get_idle_worker: fn() -> Result(worker.Worker, error),

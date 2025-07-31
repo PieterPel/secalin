@@ -1,3 +1,7 @@
+//// Module that defines a retry policy
+
+/// RetryPolicy
+///
 pub opaque type RetryPolicy {
     RetryPolicty(max_retries: Int, delay_seconds: Int)
 }

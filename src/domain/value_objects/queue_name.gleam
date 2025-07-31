@@ -1,3 +1,7 @@
+//// Module that defines a queue name
+
+/// QueueName
+///
 pub opaque type QueueName {
   QueueName(name: String)
 }

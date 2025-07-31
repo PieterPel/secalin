@@ -1,14 +1,16 @@
+//// Modle that defines the scheduler port
+
 import domain/entities/task
-import gleam/time/timestamp.{type Timestamp}
+import domain/value_objects/trigger
 
-pub type Trigger {
-  Now
-  Later(Timestamp)
-}
 
+/// Scheduler
+///
 pub type Scheduler(error) {
   Scheduler(
-    schedule: fn(task.Task, Trigger) -> Result(Nil, error),
+    schedule: fn(task.Task, trigger.Trigger) -> Result(Nil, error),
+    cancel: fn(task.Task) -> Result(Nil, error),
+    pending_tasks: fn() -> List(task.Task),
     running_tasks: fn() -> List(task.Task),
   )
 }
