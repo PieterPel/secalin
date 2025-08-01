@@ -3,7 +3,6 @@
 import domain/entities/task
 import domain/value_objects/trigger
 
-
 /// Scheduler
 ///
 pub type Scheduler(error) {

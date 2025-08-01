@@ -2,7 +2,4 @@
 
 /// MetricCollector
 ///
-pub type MetricCollector {
-
-}
-
+pub type MetricCollector

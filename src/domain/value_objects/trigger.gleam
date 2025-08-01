@@ -1,7 +1,7 @@
 //// Module that defines a trigger
 
-import gleam/time/timestamp
 import gleam/time/duration.{type Duration}
+import gleam/time/timestamp
 
 /// Trigger
 ///
