@@ -20,7 +20,13 @@ pub fn enqueue_task(
 
   use _ <- result.try(ctx.event_publisher.publish(event.TaskCreated(task)))
 
-  use _ <- result.try(ctx.scheduler.schedule(task, trigger.Now))
+  let trigger = trigger.now()
+
+  use _ <- result.try(ctx.scheduler.schedule(task, trigger))
+
+  use _ <- result.try(
+    ctx.event_publisher.publish(event.TaskScheduled(task, trigger)),
+  )
 
   Ok(task)
 }

@@ -2,7 +2,6 @@
 
 import gleam/option.{type Option}
 
-
 /// TaskResult
 ///
 pub type TaskResult {

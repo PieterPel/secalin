@@ -1,10 +1,21 @@
 //// Module that defines a trigger
 
-import gleam/time/timestamp.{type Timestamp}
+import gleam/time/timestamp
+import gleam/time/duration.{type Duration}
 
 /// Trigger
 ///
-pub type Trigger {
+pub opaque type Trigger {
   Now
-  Later(Timestamp)
+  Later(timestamp.Timestamp)
+}
+
+pub fn now() -> Trigger {
+  Now
+}
+
+pub fn later(duration: Duration) -> Trigger {
+  let now = timestamp.system_time()
+  let timestamp = timestamp.add(now, duration)
+  Later(timestamp)
 }
